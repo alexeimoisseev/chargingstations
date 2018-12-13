@@ -6,10 +6,11 @@
   "scripts": {
     "build": "webpack --config client/webpack.config.js",
     "start": "node index",
+    "populate": "node populate",
     "lint": "eslint ."
   },
   "keywords": [],
-  "author": "",
+  "author": "Alexei Moisseev",
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "5.0.1",

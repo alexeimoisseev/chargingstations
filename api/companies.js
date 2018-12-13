@@ -31,6 +31,13 @@ router.post('/', async (req, res) => {
   res.send('OK');
 });
 
+
+/*
+ * Returns all stations that belong to specified companiy
+ * or to the companies under it in the hierarchy.
+ * This is achieved with the help of nested sets.
+ * See `listStations` query in `db/queries.js`.
+ */
 router.get('/:company', async (req, res) => {
   const { company: company } = req.params;
   const stations = await get(listStations, {

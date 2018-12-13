@@ -1,3 +1,6 @@
+/**
+ * Run this to populate database with fake initial data.
+ */
 const db = require('./db');
 const {
   createCompanies,
@@ -17,5 +20,4 @@ const {
   await db.run(insertStation, {company: 2, name: 'Oulu Station'});
   await db.run(insertStation, {company: 3, name: 'Töölöö station'});
   await db.run(insertStation, {company: 3, name: 'Kaisaniemi station'});
-
 })();

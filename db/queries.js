@@ -13,6 +13,20 @@ const createStations = `CREATE TABLE IF NOT EXISTS stations (
   company INT NOT NULL
 );`;
 
+
+/**
+ * `companies` table is made as **Nested set**.
+ * Inspired by an awesome article and tutorial:
+ * http://mikehillyer.com/articles/managing-hierarchical-data-in-mysql/
+ *
+ * sqlite doesn't support variables. This is why we create
+ * temporary table and use it as variable.
+ * It will help to avoid extra queries for `lft` field of parent company.
+ *
+ * Inserting a company must be done as transaction.
+ * `better-sqlite3` supports transactions only with separate commands.
+ * This is why this query is stored as an array.
+ */
 const insertCompany = [
   'CREATE TEMP TABLE tmp (lft INT);',
   `INSERT INTO tmp (lft) VALUES (
@@ -34,6 +48,7 @@ const insertStation = `INSERT INTO stations
   VALUES
   ($name, $company)
 `;
+
 const listStations = `SELECT id, name FROM STATIONS WHERE company IN (
   SELECT node.id FROM
     companies AS node,
