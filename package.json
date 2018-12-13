@@ -1,0 +1,32 @@
+{
+  "name": "virta",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config client/webpack.config.js",
+    "start": "node index",
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "5.0.1",
+    "body-parser": "1.18.3",
+    "express": "4.16.4"
+  },
+  "devDependencies": {
+    "@babel/core": "7.2.0",
+    "@babel/preset-env": "7.2.0",
+    "@babel/preset-react": "7.0.0",
+    "babel-eslint": "10.0.1",
+    "babel-loader": "8.0.4",
+    "eslint": "5.10.0",
+    "eslint-plugin-react": "7.11.1",
+    "react": "16.6.3",
+    "react-dom": "16.6.3",
+    "webpack": "4.27.1",
+    "webpack-cli": "3.1.2"
+  }
+}

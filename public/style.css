@@ -1,0 +1,52 @@
+.App {
+  display: flex;
+  font-family: monospace;
+}
+
+.App__companies {
+  padding: 20px;
+  margin: 0 20px;
+}
+
+.App__stations {
+  padding: 0 20px;
+  margin: 5px 0;
+}
+
+.Companies {
+  background-color: #E0CBA8;
+}
+.Companies__company {
+  padding: 10px;
+  margin: 5px 0;
+  cursor: pointer;
+  background-color: #FFD5CB;
+}
+
+.Companies__company_selected {
+  background-color: #564154;
+  color: #ffffff;
+}
+
+
+.Companies__company:hover {
+  background-color: #FF6542;
+}
+
+.Stations {
+}
+.Stations__station {
+  font-size: 20px;
+}
+.AddCompanyForm {
+  padding: 20px;
+  margin: 5px 0;
+  background-color: #779FA1;
+}
+
+.AddStationForm {
+  padding: 20px;
+  color: #ffffff;
+  margin: 5px 0;
+  background-color: #564154;
+}
